@@ -22,8 +22,7 @@ export default function HomePage() {
         <>
             <div className='h-auto md:h-screen overflow-y-scroll md:overflow-hidden w-full'>
                 <iframe
-                    // src="https://futeservices.com/25-26/DOSTI%20360/index.html"
-                    src="https://futeservices.com/26-27/Hiranadani/DOSTI/index.html"
+                    src="https://futeservices.com/25-26/DOSTI%20360/index.html"
                     style={{ width: "100%", height: "100vh", border: "none" }}
                     title=""
                     className='select-none'

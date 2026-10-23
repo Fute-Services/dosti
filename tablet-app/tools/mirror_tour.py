@@ -1,6 +1,6 @@
 import math, os, re, sys, urllib.request, urllib.parse
 from concurrent.futures import ThreadPoolExecutor
-BASE = "https://futeservices.com/26-27/Hiranadani/DOSTI/"
+BASE = "https://futeservices.com/25-26/DOSTI%20360/"
 OUT = sys.argv[1]
 def fetch(rel, required=True):
     dest = os.path.join(OUT, rel)
