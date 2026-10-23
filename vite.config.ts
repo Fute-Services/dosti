@@ -35,6 +35,8 @@ export default defineConfig({
         globIgnores: ['**/assets/*.{png,jpg,jpeg,webp,mp4}', 'vite.svg'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         navigateFallback: '/index.html',
+        // Opening a real file (e.g. the brochure PDF) must not be answered with the app shell.
+        navigateFallbackDenylist: [/\.[a-z0-9]+$/i],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,

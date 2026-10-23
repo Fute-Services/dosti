@@ -20,7 +20,7 @@ interface ActionItem {
 const actions: ActionItem[] = [
     {
         label: "Brochure",
-        to: "./DostiGreaterThaneBrochure.pdf",
+        to: "/DostiGreaterThaneBrochure.pdf",
         icon: <PiNotebookBold size={20} />,
         external: true,
     },
