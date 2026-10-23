@@ -1,33 +1,34 @@
+import { lazy, Suspense } from 'react'
 
 import { Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage'
-import NotFoundPage from './pages/NotFoundPage';
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 import LeftSideNavbar from './components/Navbar/LeftSideNavbar';
 import LeftSideNavbar1 from './components/Navbar/LeftSideNavbar1';
 
 import Header from './components/Navbar/Header'
-import Desclaimer from './pages/RightPanel/Desclaimer';
-import AboutNew from './pages/RightPanel/AboutNew';
-import Tie_up from './pages/RightPanel/Tie_up';
-import Aminities from './pages/Aminities';
-import MasterPlanPage1 from './pages/MasterPlanPage1';
-import LocationPage1 from './pages/LocationPage1';
+const Desclaimer = lazy(() => import('./pages/RightPanel/Desclaimer'))
+const AboutNew = lazy(() => import('./pages/RightPanel/AboutNew'))
+const Tie_up = lazy(() => import('./pages/RightPanel/Tie_up'))
+const Aminities = lazy(() => import('./pages/Aminities'))
+const MasterPlanPage1 = lazy(() => import('./pages/MasterPlanPage1'))
+const LocationPage1 = lazy(() => import('./pages/LocationPage1'))
 import GoBackButton from './components/GoBackButton';
 import GoBack from './components/GoBack';
-import WalkthroughPage from './pages/WalkthroughPage';
-import InventoryPage1 from './pages/InventoryPage1';
-import UnitPlanPage from './pages/Inventory/UnitPlanPage';
-import FloorPlanPage from './pages/Inventory/FloorPlanPage';
+const WalkthroughPage = lazy(() => import('./pages/WalkthroughPage'))
+const InventoryPage1 = lazy(() => import('./pages/InventoryPage1'))
+const UnitPlanPage = lazy(() => import('./pages/Inventory/UnitPlanPage'))
+const FloorPlanPage = lazy(() => import('./pages/Inventory/FloorPlanPage'))
 // import ProjectHighlights from './pages/Project_Highlights';
-import ProjectHighLights from './pages/ProjectHighLights'
-import Testimonials from './pages/RightPanel/Testimonials';
-import Specification from './pages/RightPanel/Specification'
+const ProjectHighLights = lazy(() => import('./pages/ProjectHighLights'))
+const Testimonials = lazy(() => import('./pages/RightPanel/Testimonials'))
+const Specification = lazy(() => import('./pages/RightPanel/Specification'))
 // import Testimonials from './pages/RightPanel/FeedBack';
 
-import BuildingPage from './pages/Inventory/BuildingPage';
+const BuildingPage = lazy(() => import('./pages/Inventory/BuildingPage'))
 
-import Construction from '../src/pages/RightPanel/Costruction'
+const Construction = lazy(() => import('../src/pages/RightPanel/Costruction'))
 function App() {
 
 
@@ -65,6 +66,7 @@ function App() {
       {showBack1 && <GoBack />}
       {showBack && <GoBackButton />}
       {navbar22 && <LeftSideNavbar1/>}
+      <Suspense fallback={null}>
       <Routes>
 
         <Route path="/" element={<HomePage />} />
@@ -88,6 +90,7 @@ function App() {
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </Suspense>
     </>
   )
 }
